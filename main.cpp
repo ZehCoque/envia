@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "CarregaArquivo.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +18,8 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
+
+    qmlRegisterType<CarregaArquivo>("CarregaArquivo", 1, 0, "CarregaArquivo");
 
     return app.exec();
 }

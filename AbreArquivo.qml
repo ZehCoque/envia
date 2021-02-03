@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
 import QtQuick.Dialogs 1.0
-
+import CarregaArquivo 1.0
 
 Page {
     visible: true
@@ -15,7 +15,7 @@ Page {
     TextArea{
         //propriedades de texto
         id: textArea
-        text: null
+        text: "O conteúdo do arquivo selecionado será mostrado aqui."
         wrapMode: "WordWrap"
         horizontalAlignment: TextEdit.AlignHCenter
 
@@ -45,19 +45,18 @@ Page {
 
     }
 
+    CarregaArquivo{
+        id: carregaArquivo
+    }
+
     //FileDialog component
     FileDialog {
         id: fileDialog
-        title: "Please choose a file"
-        folder: shortcuts.home
+//        folder: shortcuts.home
         onAccepted: {
-            console.log("You chose: " + fileDialog.fileUrls)
-            textArea.text = this.fileUrl
-        }
-        onRejected: {
-            console.log("Canceled")
-        }
+            textArea.text = carregaArquivo.lerArquivo(this.fileUrl) // Envia nome de arquivo para o filestream
 
+        }
     }
 
 }
