@@ -30,9 +30,7 @@ Page {
     }
 
     Row {
-        anchors{
-            horizontalCenter: parent.horizontalCenter
-        }
+        anchors.horizontalCenter: parent.horizontalCenter
         y: parent.height - 120
         spacing: 60
 
