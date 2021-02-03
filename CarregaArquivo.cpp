@@ -9,9 +9,9 @@ CarregaArquivo::CarregaArquivo(QObject *parent) : QObject(parent)
 
 QString CarregaArquivo::lerArquivo(QString filepath)
 {
-    qDebug() << filepath;
+
     QFile file(filepath.replace(0,8,""));
-    QString strings;
+    QString string; //iniciando a variável que guardará o conteúdo do arquivo
 
     if (!file.exists()) {
         return "Ocorreu um erro ao ler o arquivo! \nDescrição do erro:\n" + file.errorString();
@@ -20,12 +20,11 @@ QString CarregaArquivo::lerArquivo(QString filepath)
     if (file.open(QIODevice::ReadOnly | QFile::Text)){
         QTextStream in(&file);
         while (!in.atEnd()) {
-            strings += in.readLine();
-            qDebug() << strings;
+            string += in.readLine();
         }
     }
 
     file.close();
-    return strings;
+    return string;
 
 }

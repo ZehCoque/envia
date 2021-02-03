@@ -12,20 +12,24 @@ Page {
         id : openFileWindow
     }
 
-    TextArea{
-        //propriedades de texto
-        id: textArea
-        text: "O conteúdo do arquivo selecionado será mostrado aqui."
-        wrapMode: "WordWrap"
-        horizontalAlignment: TextEdit.AlignHCenter
-
-        //propriedades de posição
+    //Tornando o component TextArea scrollável
+    ScrollView {
         width: parent.width - 50
         height: 300
         anchors.horizontalCenter: parent.horizontalCenter
         y: 30
 
+        TextArea{
+            id: textArea
+            text: "O conteúdo do arquivo selecionado será mostrado aqui."
+            wrapMode: "WordWrap"
+            readOnly: true
+
+
+        }
+
     }
+
 
     //Botão p/ chamar o QML FileDialog
     Button {
