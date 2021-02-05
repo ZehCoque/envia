@@ -9,8 +9,7 @@ CarregaArquivo::CarregaArquivo(QObject *parent) : QObject(parent)
 
 QString CarregaArquivo::lerArquivo(QString filepath)
 {
-
-    QFile file(filepath.replace(0,8,""));
+    QFile file(filepath.replace(0,7,""));
     QString string; //iniciando a variável que guardará o conteúdo do arquivo
 
     if (!file.exists()) {

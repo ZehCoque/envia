@@ -57,6 +57,7 @@ Page {
     FileDialog {
         id: fileDialog
 //        folder: shortcuts.home
+        //Talvez aqui seria interessante incluir a propriedade que permite selecionar apenas alguns formatos de arquivo. Contudo, isso nao foi especificado no projeto.
         onAccepted: {
             textArea.text = carregaArquivo.lerArquivo(this.fileUrl) // Envia nome de arquivo para o filestream
 
