@@ -15,7 +15,7 @@ Page {
         text: "Bem vindo à primeira atividade do desafio da vaga de Desenvolvedor de Software da Otmis - Jacto."
         wrapMode: "WordWrap"
         horizontalAlignment: TextEdit.AlignHCenter
-
+        readOnly: true
         //propriedades de posição
         width: parent.width - 50
         anchors.horizontalCenter: parent.horizontalCenter
@@ -27,6 +27,7 @@ Page {
         text: "Desenvolvido por José Antonio Rico Coque"
         anchors.horizontalCenter: parent.horizontalCenter
         y: 90
+        readOnly: true
     }
 
     Row {

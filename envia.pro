@@ -1,4 +1,4 @@
-QT += quick
+QT += quick dbus
 
 CONFIG += c++11
 
@@ -8,6 +8,7 @@ CONFIG += c++11
 
 SOURCES += \
         CarregaArquivo.cpp \
+        EnviaComando.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -24,4 +25,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    CarregaArquivo.h
+    CarregaArquivo.h \
+    EnviaComando.h

@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "CarregaArquivo.h"
+#include "EnviaComando.h"
+#include <QtDBus/QDBusConnection>
 
 int main(int argc, char *argv[])
 {
@@ -20,6 +22,7 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     qmlRegisterType<CarregaArquivo>("CarregaArquivo", 1, 0, "CarregaArquivo");
+    qmlRegisterType<EnviaComando>("EnviaComando", 1, 0, "EnviaComando");
 
     return app.exec();
 }
