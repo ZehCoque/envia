@@ -8,7 +8,7 @@ class CarregaArquivo : public QObject
     Q_OBJECT
 public:
     explicit CarregaArquivo(QObject *parent = nullptr);
-    Q_INVOKABLE QString lerArquivo(const QString filepath);
+    Q_INVOKABLE QString lerArquivo(const QString filepath); //essa funcao e possivel de ser chamada pelo QML
 
 signals:
 

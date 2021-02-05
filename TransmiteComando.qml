@@ -6,7 +6,7 @@ Page {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Enviar Comando")
+    title: "Enviar Comando"
     Loader{
         id : sendCommandWindow
     }
@@ -40,6 +40,7 @@ Page {
         y: 160
         horizontalAlignment: "AlignHCenter"
         width: parent.width-50
+
     }
 
     EnviaComando{
@@ -57,7 +58,7 @@ Page {
             anchors.fill: parent
             onClicked: {
                 //Enviar comando
-                enviaComando.sendCommand("teste","teste")
+                enviaComando.sendCommand(topic.text,content.text)
             }
         }
 

@@ -6,7 +6,7 @@ ApplicationWindow {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Stack")
+    title: "envia - Atividade 1"
 
     header: ToolBar {
         contentHeight: toolButton.implicitHeight
@@ -39,7 +39,7 @@ ApplicationWindow {
             anchors.fill: parent
 
             ItemDelegate {
-                text: qsTr("Abrir Arquivo")
+                text: "Abrir Arquivo"
                 width: parent.width
                 onClicked: {
                     stackView.push("AbreArquivo.qml")
@@ -47,11 +47,18 @@ ApplicationWindow {
                 }
             }
             ItemDelegate {
-                text: qsTr("Enviar Comando")
+                text: "Enviar Comando"
                 width: parent.width
                 onClicked: {
                     stackView.push("TransmiteComando.qml")
                     drawer.close()
+                }
+            }
+            ItemDelegate {
+                text: "Sair/Encerrar"
+                width: parent.width
+                onClicked: {
+                    Qt.quit()
                 }
             }
         }
